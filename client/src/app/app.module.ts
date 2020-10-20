@@ -1,3 +1,4 @@
+import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -10,12 +11,19 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+
 import { NavComponent } from './_components/nav/nav.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 
 @NgModule({
-  declarations: [AppComponent, NavComponent, NotFoundComponent, ServerErrorComponent],
+  declarations: [
+    AppComponent,
+    NavComponent,
+    NotFoundComponent,
+    ServerErrorComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -28,11 +36,17 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
     }),
+    TabsModule.forRoot(),
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
       multi: true,
     },
   ],
