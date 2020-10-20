@@ -1,3 +1,4 @@
+import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,6 +17,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NavComponent } from './_components/nav/nav.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
       positionClass: 'toast-bottom-right',
     }),
     TabsModule.forRoot(),
+    NgxSpinnerModule,
   ],
   providers: [
     {
@@ -47,6 +50,11 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
     {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
       multi: true,
     },
   ],

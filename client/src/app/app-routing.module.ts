@@ -16,7 +16,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {
-        path: 'members',
+        path: '',
         loadChildren: () =>
           import('./_pages/members/member.module').then((m) => m.MemberModule),
         canActivate: [AuthGuard],
