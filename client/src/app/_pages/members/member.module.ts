@@ -9,6 +9,8 @@ import { MemberComponent } from './member.component';
 import { MemberDetailComponent } from './member-detail/member-detail.component';
 import { MemberCardComponent } from './member-card/member-card.component';
 import { MemberEditComponent } from './member-edit/member-edit.component';
+import { PhotoEditorComponent } from './photo-editor/photo-editor.component';
+import { FileUploadModule } from 'ng2-file-upload';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { MemberEditComponent } from './member-edit/member-edit.component';
     MemberDetailComponent,
     MemberCardComponent,
     MemberEditComponent,
+    PhotoEditorComponent,
   ],
   imports: [
     CommonModule,
@@ -23,6 +26,7 @@ import { MemberEditComponent } from './member-edit/member-edit.component';
     MemberRoutingModule,
     TabsModule.forRoot(),
     NgxGalleryModule,
+    FileUploadModule,
   ],
 })
 export class MemberModule {}
