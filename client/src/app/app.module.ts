@@ -18,6 +18,8 @@ import { NavComponent } from './_components/nav/nav.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { TimeagoModule } from 'ngx-timeago';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     }),
     TabsModule.forRoot(),
     NgxSpinnerModule,
+    TimeagoModule.forRoot(),    
+    ButtonsModule.forRoot(),
   ],
   providers: [
     {
