@@ -1,3 +1,4 @@
+import { MemberMessagesModule } from './../member-messages/member-messages.module';
 import { TimeagoModule } from 'ngx-timeago';
 import { FormsModule } from '@angular/forms';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
@@ -33,6 +34,8 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
     PaginationModule.forRoot(),
     TimeagoModule,
     ButtonsModule,
+    MemberMessagesModule,
   ],
+  exports: [MemberCardComponent],
 })
 export class MemberModule {}

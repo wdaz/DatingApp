@@ -1,3 +1,4 @@
+import { MemberDetailedResolver } from './../../_resolvers/member-detailed.resolver';
 import { PreventUnsavedChangesGuard } from './../../_guards/prevent-unsaved-changes.guard';
 import { MemberEditComponent } from './member-edit/member-edit.component';
 import { MemberDetailComponent } from './member-detail/member-detail.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   {
     path: 'members/:username',
     component: MemberDetailComponent,
+    resolve: { member: MemberDetailedResolver },
   },
   {
     path: 'member/edit',
