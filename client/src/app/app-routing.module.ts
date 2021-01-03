@@ -1,3 +1,4 @@
+import { AdminGuard } from './_guards/admin.guard';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { AuthGuard } from './_guards/auth.guard';
@@ -32,6 +33,12 @@ const routes: Routes = [
           import('./_pages/messages/messages.module').then(
             (m) => m.MessagesModule
           ),
+      },
+      {
+        path: 'admin',
+        loadChildren: () =>
+          import('./admin/admin.module').then((m) => m.AdminModule),
+        canActivate: [AdminGuard],
       },
     ],
   },

@@ -20,6 +20,7 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { TimeagoModule } from 'ngx-timeago';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { HasRoleDirective } from './_directives/has-role.directive';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
     NavComponent,
     NotFoundComponent,
     ServerErrorComponent,
+    HasRoleDirective,
   ],
   imports: [
     BrowserModule,
