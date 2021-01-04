@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
@@ -10,17 +11,13 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CollapseModule } from 'ngx-bootstrap/collapse';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { TabsModule } from 'ngx-bootstrap/tabs';
 
 import { NavComponent } from './_components/nav/nav.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { TimeagoModule } from 'ngx-timeago';
-import { ButtonsModule } from 'ngx-bootstrap/buttons';
-import { HasRoleDirective } from './_directives/has-role.directive';
+import { RolesModalComponent } from './_components/roles-modal/roles-modal.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +25,7 @@ import { HasRoleDirective } from './_directives/has-role.directive';
     NavComponent,
     NotFoundComponent,
     ServerErrorComponent,
-    HasRoleDirective,
+    RolesModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,15 +34,12 @@ import { HasRoleDirective } from './_directives/has-role.directive';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    CollapseModule.forRoot(),
-    BsDropdownModule.forRoot(),
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
     }),
-    TabsModule.forRoot(),
+    TimeagoModule.forRoot(),
     NgxSpinnerModule,
-    TimeagoModule.forRoot(),    
-    ButtonsModule.forRoot(),
+    SharedModule,
   ],
   providers: [
     {
