@@ -1,5 +1,4 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { from } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { PaginatedResult } from '../_models/pagination';
 

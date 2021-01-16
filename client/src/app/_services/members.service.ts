@@ -1,11 +1,10 @@
 import { AccountService } from 'src/app/_services/account.service';
 import { UserParams } from './../_models/userParams';
-import { PaginatedResult } from './../_models/pagination';
 import { map, take } from 'rxjs/operators';
 import { Member } from './../_models/member';
 import { from, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { environment } from './../../environments/environment.prod';
+import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { User } from '../_models/user';
 import { getPaginatedResult, getPaginationHeaders } from './paginationHelper';

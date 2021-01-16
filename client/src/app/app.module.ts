@@ -18,6 +18,7 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { TimeagoModule } from 'ngx-timeago';
 import { RolesModalComponent } from './_components/roles-modal/roles-modal.component';
+import { ConfirmDialogComponent } from './_components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { RolesModalComponent } from './_components/roles-modal/roles-modal.compo
     NotFoundComponent,
     ServerErrorComponent,
     RolesModalComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,

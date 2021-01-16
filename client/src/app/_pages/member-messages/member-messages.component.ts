@@ -8,9 +8,11 @@ import {
   Output,
   EventEmitter,
   ViewChild,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-member-messages',
   templateUrl: './member-messages.component.html',
   styleUrls: ['./member-messages.component.scss'],
@@ -21,7 +23,7 @@ export class MemberMessagesComponent implements OnInit {
   @Output() emitSendMessage = new EventEmitter<string>();
   messageContent: string;
 
-  constructor(private messageService: MessageService) {}
+  constructor(public messageService: MessageService) {}
 
   ngOnInit(): void {}
 
