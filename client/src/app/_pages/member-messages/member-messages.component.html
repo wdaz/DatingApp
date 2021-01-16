@@ -11,7 +11,7 @@
       *ngIf="(messageService.messageThread$ | async)?.length > 0"
       class="chat"
     >
-      <li *ngFor="let message of messageService.messageThread$ | async">
+      <li *ngFor="let message of (messageService.messageThread$ | async)">
         <div>
           <span class="chat-img float-right">
             <img
