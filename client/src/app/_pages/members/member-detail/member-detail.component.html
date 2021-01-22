@@ -65,6 +65,7 @@
       </tab>
       <tab heading="Messages" (selectTab)="onTabActivated($event)">
         <app-member-messages
+          [loading]="loading"
           (emitSendMessage)="sendMessage($event)"
         ></app-member-messages>
       </tab>

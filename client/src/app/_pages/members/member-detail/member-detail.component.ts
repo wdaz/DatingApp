@@ -27,6 +27,7 @@ export class MemberDetailComponent implements OnInit, OnDestroy {
   activeTab: TabDirective;
   messages: Message[] = [];
   user: User;
+  loading = false;
 
   constructor(
     public presence: PresenceService,
@@ -102,8 +103,10 @@ export class MemberDetailComponent implements OnInit, OnDestroy {
   }
 
   sendMessage(content: string) {
+    this.loading = true;
     this.messageService
       .sendMessage(this.member.username, content)
-      .then(() => {});
+      .then(() => {})
+      .finally(() => (this.loading = false));
   }
 }

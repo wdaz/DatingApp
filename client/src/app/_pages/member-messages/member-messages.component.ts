@@ -19,7 +19,7 @@ import {
 })
 export class MemberMessagesComponent implements OnInit {
   @ViewChild('messageForm') messageForm: NgForm;
-  @Input() messages: Message[];
+  @Input() loading: boolean;
   @Output() emitSendMessage = new EventEmitter<string>();
   messageContent: string;
 
