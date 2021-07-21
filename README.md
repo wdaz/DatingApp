@@ -1,2 +1,3 @@
 # Dating app
-## [Demo](https://sosialdating.herokuapp.com/)
+
+<!-- ## [Demo](https://sosialdating.herokuapp.com/) -->
